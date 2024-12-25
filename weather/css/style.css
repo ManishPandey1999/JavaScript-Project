@@ -1,0 +1,12 @@
+*{margin: 0; padding: 0; box-sizing: border-box; font-family: Arial, Helvetica, sans-serif;}
+
+.card{background-image: linear-gradient(to right, #f43b47 0%, #453a94 100%);}
+p{margin-bottom: 0;}
+h1, h2, h3, h4, h5, h6{margin: 0;}
+.extra-icon{width: 30px; height: 30px;}
+.extra-icon img{width: 100%;}
+.sm-para{font-size: 12px;}
+.weather-temprature{font-size: 60px; font-weight: 300;}
+.country-inputbox input{border-radius: 6px; font-size: 13px; color: #484849; border: none; padding: 6px 10px;}
+.country-inputbox input:focus{box-shadow: none; outline: none;}
+.country-inputbox input::placeholder{font-size: 13px; color: #717172;}

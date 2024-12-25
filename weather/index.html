@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Weather App</title>
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/style.css">
+    <script src="js/bootstrap.bundle.min.js"></script>
+    <script src="js/jquery.min.js"></script>
+</head>
+<body>
+
+    <section class="weather-app mt-5">
+        <div class="container">
+            <div class="row">
+                <div class="col-sm-6 offset-sm-3">
+                    <div class="card">
+                        <div class="card-body">
+                            <h1 class="text-center fs-1 fw-bold mb-4 text-white">Weather App</h1>
+                            <div class="weather-container">
+                                <div class="country-inputbox text-center">
+                                    <input type="text" id="countryInputBox" value="" placeholder="Please Enter city name..">
+                                    <button class="btn btn-primary btn-sm" id="weatherSubmitBtn">Submit</button>
+                                </div>
+                                <div class="row">
+                                    <div class="col-sm-6">
+                                        <div class="weather-image text-center pt-5 pl-0">
+                                            <img id="weatherImage" src="images/clear-sun.png" alt="Weather Image">                                    
+                                        </div>
+                                    </div>
+                                    <div class="col-sm-6">
+                                        <div class="weather-detail-box pt-5 pb-5 pr-0 text-center">
+                                            <h1 class="weather-temprature mb-3 text-white"><span id="weatherTemprature">18</span><sup>o</sup>C</h1>
+                                            <p class="weather-type text-white sm-para mb-2" id="weatherType">Cloud</p>
+                                            <p class="city-name text-white mb-4" id="cityName">New Delhi</p>
+                                            <div class="extra-weather-detail d-flex gap-2 align-items-center">
+                                                <div class="humidity d-flex gap-2 align-items-center">
+                                                    <div class="extra-icon">
+                                                        <img src="images/humidity.png" alt="Humidity Image">
+                                                    </div>
+                                                    <div class="humidity-details">
+                                                        <h4 class="text-white sm-para mb-1" id="humidityDetail">70%</h4>
+                                                        <p class="sm-text text-white sm-para">Humidity</p>
+                                                    </div>
+                                                </div>
+                                                <div class="windspeed d-flex gap-2 align-items-center">
+                                                    <div class="extra-icon">
+                                                        <img src="images/wind-speed.png" alt="Windspeed Image">
+                                                    </div>
+                                                    <div class="windspeed-details">
+                                                        <h4 class="text-white sm-para mb-1" id="windSpeedDetail">10 Km/h</h4>
+                                                        <p class="sm-text text-white sm-para">Wind Speed</p>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+    <script src="js/event.js"></script>
+</body>
+</html>
