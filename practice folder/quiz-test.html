@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Quiz Game</title>
+  <style>
+    .quiz-container{ width:40%; margin:auto; background:#fde3e3; padding:20px; border-radius:18px; }
+    #question{ padding:10px 20px; font-size:24px; font-weight:600; }
+    #options{ padding:10px; }
+    #options button{ margin:5px 15px; font-size:18px; font-weight:400; background:transparent; border:none; position:relative; }
+    #options button:before{ content:""; position:absolute; border:2px solid #000; height:12px; width:12px; border-radius:50%; top:5px; left:-16px; }
+    #submit{ margin:5px 15px; font-size:18px; font-weight:400; }
+    #score{ padding:20px; font-size:18px; }
+  </style>
+</head>
+<body>
+  <div class="quiz-container">
+    <h1>Quiz Game</h1>
+    <div id="question"></div>
+    <div id="options"></div>
+    <button id="submit">Submit</button>
+    <p id="score">Score: <span id="score-value">0</span></p>
+  </div>
+  <script type="text/javascript">
+    
+    const questions = [
+      {
+        question: '1. What is the capital of France?',
+        options: ['Paris', 'London', 'Rome', 'Berlin'],
+        answer: 'Paris'
+      },
+      {
+        question: '2. Which planet is known as the Red Planet?',
+        options: ['Mars', 'Venus', 'Jupiter', 'Mercury'],
+        answer: 'Mars'
+      },
+      // Add more questions in a similar format
+    ];
+
+    let currentQuestionIndex = 0;
+    let score = 0;
+
+    const questionElement = document.getElementById('question');
+    const optionsElement = document.getElementById('options');
+    const submitButton = document.getElementById('submit');
+    const scoreElement = document.getElementById('score-value');
+
+    function loadQuestion() {
+      const currentQuestion = questions[currentQuestionIndex];
+      questionElement.textContent = currentQuestion.question;
+      optionsElement.innerHTML = '';
+
+      currentQuestion.options.forEach((option, index) => {
+        const button = document.createElement('button');
+        button.textContent = option;
+        button.addEventListener('click', () => checkAnswer(option));
+        optionsElement.appendChild(button);
+      });
+    }
+
+    function checkAnswer(selectedOption) {
+      const currentQuestion = questions[currentQuestionIndex];
+      if (selectedOption === currentQuestion.answer) {
+        score++;
+        scoreElement.textContent = score;
+      }
+
+      currentQuestionIndex++;
+      if (currentQuestionIndex < questions.length) {
+        loadQuestion();
+      } else {
+        endGame();
+      }
+    }
+
+    function endGame() {
+      questionElement.textContent = 'Quiz completed!';
+      optionsElement.innerHTML = '';
+      submitButton.style.display = 'none';
+    }
+
+    loadQuestion();
+
+  </script>
+</body>
+</html>

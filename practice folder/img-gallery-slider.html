@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Scroll img</title>
+    <style>
+      .main-gallery {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+      }
+      /* .gallery{display: flex; width: 900px; overflow-x: scroll; scrollbar-width: none;}
+        .gallery div{width: 100%; display: grid; grid-template-columns: auto auto auto; flex: none; grid-gap: 20px;} */
+      .gallery {
+        width: 900px;
+        overflow-x: scroll;
+        scrollbar-width: none;
+        display: grid;
+        grid-template-columns: auto auto auto auto auto auto;
+        grid-gap: 10px;
+      }
+      .gallery span {
+        width: 300px;
+      }
+      .gallery img {
+        width: 100%;
+      }
+      .gallery::-webkit-scrollbar {
+        display: none;
+      }
+      .leftbtn,
+      .rightbtn {
+        padding: 10px;
+        height: 20px;
+        width: 20px;
+        background: #f1cccc;
+        border-radius: 50px;
+        font-size: 16px;
+        font-weight: bold;
+        cursor: pointer;
+        margin: auto 20px;
+        text-align: center;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="main-gallery">
+      <div class="leftbtn" id="nextbtn">&lt;</div>
+      <div class="gallery">
+        <span><img src="images/img-a.jpg" alt="" /></span>
+        <span><img src="images/img-b.jpg" alt="" /></span>
+        <span><img src="images/img-c.jpg" alt="" /></span>
+
+        <span><img src="images/img-d.jpg" alt="" /></span>
+        <span><img src="images/img-e.jpg" alt="" /></span>
+        <span><img src="images/img-f.jpg" alt="" /></span>
+      </div>
+      <div class="rightbtn" id="prevbtn">&gt;</div>
+    </div>
+
+    <script>
+      let galleryDivision = document.querySelector(".gallery");
+      let leftBtn = document.getElementById("nextbtn");
+      let rightBtn = document.getElementById("prevbtn");
+
+      galleryDivision.addEventListener("wheel", (evt) => {
+        evt.preventDefault();
+        galleryDivision.scrollLeft += evt.deltaY;
+        galleryDivision.style.scrollBehavior = "auto";
+      });
+
+      leftBtn.addEventListener("click", () => {
+        galleryDivision.style.scrollBehavior = "smooth";
+        galleryDivision.scrollLeft -= 305;
+      });
+
+      rightBtn.addEventListener("click", () => {
+        galleryDivision.style.scrollBehavior = "smooth";
+        galleryDivision.scrollLeft += 305;
+      });
+    </script>
+  </body>
+</html>

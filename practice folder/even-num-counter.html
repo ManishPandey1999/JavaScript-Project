@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Natural Number</title>
+    <style type="text/css">
+      #demo {
+        display: flex;
+        padding: 10px;
+      }
+    </style>
+  </head>
+  <body>
+    <p id="demo"></p>
+
+    <script type="text/javascript">
+      let integ = "";
+      let x = prompt("Enter last number: ");
+      x = Number.parseInt(x);
+      for (let num = 2; num <= x; num += 2) {
+        let integ = num + "<br>";
+        document.getElementById("demo").innerHTML += integ;
+      }
+    </script>
+  </body>
+</html>

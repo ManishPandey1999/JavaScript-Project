@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Ajax</title>
+    <link rel="stylesheet" href="css/bootstrap5.min.css" />
+    <script src="js/jquery.min.js"></script>
+    <style></style>
+  </head>
+  <body>
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+      <div class="container-fluid">
+        <a class="navbar-brand" href="#">Navbar</a>
+        <button
+          class="navbar-toggler"
+          type="button"
+          data-bs-toggle="collapse"
+          data-bs-target="#navbarSupportedContent"
+          aria-controls="navbarSupportedContent"
+          aria-expanded="false"
+          aria-label="Toggle navigation"
+        >
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+          <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+            <li class="nav-item">
+              <a class="nav-link active" aria-current="page" href="#">Home</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#">Link</a>
+            </li>
+            <li class="nav-item dropdown">
+              <a
+                class="nav-link dropdown-toggle"
+                href="#"
+                id="navbarDropdown"
+                role="button"
+                data-bs-toggle="dropdown"
+                aria-expanded="false"
+              >
+                Dropdown
+              </a>
+              <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+                <li><a class="dropdown-item" href="#">Action</a></li>
+                <li><a class="dropdown-item" href="#">Another action</a></li>
+                <li><hr class="dropdown-divider" /></li>
+                <li>
+                  <a class="dropdown-item" href="#">Something else here</a>
+                </li>
+              </ul>
+            </li>
+            <li class="nav-item">
+              <a
+                class="nav-link disabled"
+                href="#"
+                tabindex="-1"
+                aria-disabled="true"
+                >Disabled</a
+              >
+            </li>
+          </ul>
+          <form class="d-flex">
+            <input
+              class="form-control me-2"
+              type="search"
+              placeholder="Search"
+              aria-label="Search"
+            />
+            <button class="btn btn-outline-success" type="submit">
+              Search
+            </button>
+          </form>
+        </div>
+      </div>
+    </nav>
+    <div class="m-3">
+      <div class="form-floating mb-3">
+        <input
+          type="email"
+          class="form-control"
+          id="floatingInput"
+          placeholder="name@example.com"
+        />
+        <label for="floatingInput">Email address</label>
+      </div>
+      <div class="form-floating">
+        <input
+          type="password"
+          class="form-control"
+          id="floatingPassword"
+          placeholder="Password"
+        />
+        <label for="floatingPassword">Password</label>
+      </div>
+    </div>
+    <div id="cardContainer" class="container d-flex flex-wrap"></div>
+
+    <!-- through javascript -->
+
+    <!-- <script>
+      let url = "https://jsonplaceholder.typicode.com/posts";
+      let response = fetch(url);
+      response
+        .then((v) => {
+          return v.json();
+        })
+        .then((contest) => {
+          console.log(contest);
+          inrhtml = "";
+          for (item in contest) {
+            console.log(contest[item]);
+            inrhtml += `
+              <div class="card m-2" style="width: 18rem">
+              <img src="..." class="card-img-top" alt="..." />
+              <div class="card-body">
+                <h4>${contest[item].id}</h4>
+                <h5 class="card-title">${contest[item].title}</h5>
+                <p class="card-text">${contest[item].body}</p>
+              </div>
+            </div>
+            `;
+          }
+          cardContainer.innerHTML = inrhtml;
+        });
+    </script> -->
+
+    <!-- through jquery method -->
+
+    <script>
+      let url = "posts.json";
+      $.getJSON(url, function (contest) {
+        let inrhtml = "";
+        $.each(contest, function (index, post) {
+          inrhtml += `
+            <div class="card mx-3 my-2" style="width: 18rem">
+              <img src="${post.image}" class="card-img-top" alt="..." />
+              <div class="card-body">
+                <h5 class="card-title"><strong>${post.title}</strong></h5>
+                <p class="card-text">${post.body}</p>
+              </div>
+            </div>
+          `;
+        });
+        $("#cardContainer").html(inrhtml);
+      });
+    </script>
+  </body>
+</html>

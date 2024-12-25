@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>EMI calculator</title>
+    <style type="text/css">
+      /* Chrome, Safari, Edge, Opera */
+      input::-webkit-outer-spin-button,
+      input::-webkit-inner-spin-button {
+        -webkit-appearance: none;
+        margin: 0;
+      }
+
+      /* Firefox */
+      input[type="number"] {
+        -moz-appearance: textfield;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="emi-calculator">
+      <label for="principal">Loan Amount:</label>
+      <input type="number" id="principal" placeholder="Loan amount" />
+      <br /><br />
+
+      <label for="rate">Interest Rate (annual):</label>
+      <input type="number" id="rate" placeholder="Interest rate" /><br /><br />
+
+      <label for="term">Loan Term (months):</label>
+      <input type="number" id="term" placeholder="Loan term" /><br /><br />
+
+      <button onclick="calculateEMI()">Calculate EMI</button><br /><br />
+
+      <label for="result">EMI (Monthly Installment):</label>
+      <input type="text" id="result" readonly />
+    </div>
+
+    <script type="text/javascript">
+      function calculateEMI() {
+        const principal = document.getElementById("principal").value;
+        const rate = document.getElementById("rate").value / 1200; // Monthly interest rate
+        const term = document.getElementById("term").value;
+
+        if (principal && rate && term) {
+          const emi = (principal * rate) / (1 - Math.pow(1 + rate, -term));
+          document.getElementById("result").value = emi.toFixed(2); // Display EMI with two decimal places
+        } else {
+          alert("Please enter all fields."); // Show an alert if any field is empty
+        }
+      }
+    </script>
+  </body>
+</html>
