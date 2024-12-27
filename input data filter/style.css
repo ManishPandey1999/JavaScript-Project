@@ -1,0 +1,11 @@
+*{margin: 0; padding: 0; box-sizing: border-box; font-family: Arial, Helvetica, sans-serif;}
+
+body{background-color: antiquewhite; width: 100vw; height: 100vh; display: flex; justify-content: center;}
+#arrayText{margin-top: 80px;}
+h1{margin-bottom: 10px;}
+input{border-color: #969494; padding: 6px; border-radius: 6px;}
+input:focus{box-shadow: none; outline: none;}
+ul{list-style: none; font-size: 15px; padding: 8px; background-color: #fff; box-shadow: 0 0 10px #969494; border-radius: 7px;}
+li{margin-bottom: 3px; cursor: pointer; padding: 5px 8px;}
+#filteredList{height: 300px; overflow-y: scroll;}
+#filteredList li:hover{background: #eee; box-shadow: 0 0 5px #969494;}
