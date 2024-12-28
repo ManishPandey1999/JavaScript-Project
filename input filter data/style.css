@@ -1,0 +1,11 @@
+*{margin: 0; padding: 0; box-sizing: border-box; font-family: Arial, Helvetica, sans-serif;}
+
+body{background-color: antiquewhite; display: flex; justify-content: center; margin-top: 50px;}
+.add-filter-main{background-color: #fff;}
+.add-filter-main input{border: 1px solid #cecbcb; border-radius: 5px; padding: 7px 10px; width: 300px;}
+.add-filter-main input::placeholder{font-size: 15px; color: #a8a7a7;}
+.add-filter-main input:focus{box-shadow: none; outline: none;}
+#dataShowSubmitBtn{background-color: rgb(5, 145, 145); color: #fff; padding:6px 10px; cursor: pointer; font-size: 15px; border-radius: 4px; border: none;}
+.filter-data-list{list-style: none; padding: 6px 12px; font-size: 15px; margin-top: 10px;}
+.filter-data-list li{margin-bottom: 3px; padding: 5px; border-radius: 5px; cursor: pointer;}
+.filter-data-list li:hover{background-color: #eeebeb;}
