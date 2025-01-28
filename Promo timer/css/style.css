@@ -1,0 +1,10 @@
+*{margin: 0; padding: 0; box-sizing: border-box; font-family: "Poppins", serif;}
+
+.main-promotime{height: 100vh; width: 100vw;display: flex; align-items: center; justify-content: center;}
+.promo-container{padding: 20px; box-shadow: 0 0 5px #d8d7d7;}
+.promo-head{font-size: 20px; margin-bottom: 15px;}
+.promo-row{display: flex; align-items: center; gap: 15px;}
+.promo-count-box{display: flex; flex-direction: column; align-items: center; justify-content: center; font-size: 14px; box-shadow: 0 0 5px #d8d7d7; color: #fff;}
+.promo-count-box span:nth-child(1){background-color: rgb(4, 143, 51); padding: 5px 8px; border-radius: 5px 5px 0 0; text-align: center; width: 100%;}
+.promo-count-box span:nth-child(2){background-color: rgb(2, 105, 37); padding: 5px 8px; border-radius:0 0 5px 5px; text-align: center; width: 100%;}
+.expired-promo-time{font-size: 14px; color: #d10707;}
